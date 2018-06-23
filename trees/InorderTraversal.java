@@ -3,18 +3,18 @@ package trees;
 import trees.TreeUtils.TreeNode;
 import trees.TreeUtils.TreeUtils;
 
-public class PreorderTraversal {
+public class InorderTraversal {
 
     public static void main(String[] args){
         TreeNode root = TreeUtils.getBinaryTree();
-        preorderTraversal(root);
+        InorderTraversal(root);
     }
 
-    public static void preorderTraversal(TreeNode node){
+    public static void InorderTraversal(TreeNode node){
         if(node != null){
+            InorderTraversal(node.getLeftNode());
             System.out.println(node.getData());
-            preorderTraversal(node.getLeftNode());
-            preorderTraversal(node.getRightNode());
+            InorderTraversal(node.getRightNode());
         }
     }
 }
