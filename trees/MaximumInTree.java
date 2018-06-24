@@ -11,9 +11,9 @@ public class MaximumInTree {
     public static void main(String[] args) {
         TreeNode root = TreeUtils.getBinaryTree();
         int maximumValue = recursiveMaximum(root);
-        System.out.println(maximumValue);
+        System.out.println(String.format("Maximum value using recursive search is: %d", maximumValue));
         maximumValue = iterativeMaximum(root);
-        System.out.println(maximumValue);
+        System.out.println(String.format("Maximum value using iterative search is: %d", maximumValue));
     }
 
     public static int recursiveMaximum(TreeNode node) {
@@ -28,6 +28,7 @@ public class MaximumInTree {
     }
 
     public static int iterativeMaximum(TreeNode root) {
+
         //Using level order traversal to scan through the tree to find the maximum element
         if (root == null) {
             return Integer.MIN_VALUE;
